@@ -1,0 +1,32 @@
+#include <stdio.h>
+#include <conio.h>
+#include <string.h>
+#include <memory.h>
+main()
+{
+char s1[100],s2[100],s3[100],*s,*u;
+int l1,l2,l3,n;
+printf("\n Nhap xau goc s1 = ");
+gets(s1);
+printf("\n Nhap xau can thay trong xau goc s2 = ");
+gets(s2);
+printf("\n Nhap xau thay s3 = ");
+gets(s3);
+l1=strlen(s1);
+l2=strlen(s2);
+l3=strlen(s3);
+char *p;
+while((p=strstr(s1,s2))!=NULL)
+{
+s=strstr(s1,s2);
+n=strlen(s);
+strncpy(u,s1,l1-n);
+memmove(s,s+l2,strlen(s+l2)+1);
+memmove(s+l3,s,strlen(s)+1);
+strncpy(s,s3,l3);
+strcat(u,s);
+}
+puts(s1);
+
+getch();
+}
